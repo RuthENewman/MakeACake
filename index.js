@@ -18,6 +18,7 @@ function initialize() {
       state.desserts = desserts;
       state.desserts.forEach(dessert => addADesert(dessert))
     })
+  const singleCakeDiv = document.querySelector('cake');
 }
 
 function getDesserts() {
@@ -32,24 +33,46 @@ function getDesserts() {
     })
 }
 
-function getDessertByID(dessertID) {
+function searchForRecipe(dessertID) {
   fetch(`${dessertbyIDBaseURL}${dessertID}`)
     .then(response => response.json())
-    .then(data => {
-      dessertByID = {...data};
-      recipe = data[0].strinstructions;
-      video = data[0].strYoutube;
-      cuisine = data[0].strarea;
+    .then(dessert => {
+      console.log(dessert)
+      recipe = dessert.meals[0].strInstructions;
+      video = dessert.meals[0].strYoutube;
+      video_code = video.split('=')[1];
+      youtube_url = `https://www.youtube.com/embed/${video_code}`;
+      cuisine = dessert.meals[0].strArea;
+      name = dessert.meals[0].strMeal;
+      thumbnail = dessert.meals[0].strMealThumb;
+      console.log(recipe);
+      console.log(video_code);
+      console.log(youtube_url)
+      console.log(cuisine);
+      cakesDiv.innerHTML = `
+      <div class="fullCakeRecipe">
+        <div class="cakeName"><p>${name}</p></div>
+        <div class="cuisine"><p>${cuisine}</p></div>
+        <div class="cakeInstructions"><p>${recipe}</p></div>
+        <iframe width="560" height="315" src=${youtube_url} frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+        <div class="backToHome">Go back to all desserts</div>
+      </div>`;
     })
-    return dessertByID;
 }
 
 function addADessert(dessert) {
   cakesDiv.innerHTML += `<div
-  class="cake">
-     <div data-id=${dessert.idMeal} class="cakeName"><p>${dessert.strMeal}</p></div>
+  class="cake" data-id="${dessert.idMeal}">
+     <div class="cakeName"><p>${dessert.strMeal}</p></div>
      <img src=${dessert.strMealThumb} alt=${dessert.strMeal} class="cakeThumbnail"/>
       </div>`;
+  const allCakeDivs = document.querySelectorAll('.cake');
+  allCakeDivs.forEach(singleCakeDiv => singleCakeDiv.addEventListener('click', function() {
+    console.log(singleCakeDiv.dataset.id)
+    searchForRecipe(singleCakeDiv.dataset.id)
+}));
 }
 
 getDesserts();
