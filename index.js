@@ -45,21 +45,24 @@ function searchForRecipe(dessertID) {
       cuisine = dessert.meals[0].strArea;
       name = dessert.meals[0].strMeal;
       thumbnail = dessert.meals[0].strMealThumb;
-      console.log(recipe);
-      console.log(video_code);
-      console.log(youtube_url)
-      console.log(cuisine);
+      cakeButtonDiv.style.display = 'none';
       cakesDiv.innerHTML = `
       <div class="fullCakeRecipe">
-        <div class="cakeName"><p>${name}</p></div>
+        <div class="cakeTitle"><p>${name}</p></div>
         <div class="cuisine"><p>${cuisine}</p></div>
-        <div class="cakeInstructions"><p>${recipe}</p></div>
         <iframe width="560" height="315" src=${youtube_url} frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
+        <div class="cakeInstructions">
+          <h3 class="heading">Recipe instructions</h3>
+          <p>${recipe}</p>
+        </div>
         <div class="backToHome">Go back to all desserts</div>
       </div>`;
+      const backToHomeButton = document.querySelector('.backToHome');
+      backToHomeButton.addEventListener('click', getDesserts);
     })
+
 }
 
 function addADessert(dessert) {

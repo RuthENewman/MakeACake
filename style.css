@@ -8,25 +8,14 @@ body, html {
   font-weight: 400;
 }
 
-.heading {
-
+h1.heading {
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .loadingMessage {
   font-size: 40px;
   text-align: center;
-}
-
-.cakeButton {
-  background-color: #90c8ff;
-  width: 280px;
-  border-radius: 5px;
-  position: relative;
-  margin: 0 auto;
-  padding: 0.5em;
-  font-stretch: ultra-expanded;
-  font-size: 20px;
-  display: none;
 }
 
 .cakes {
@@ -48,6 +37,7 @@ body, html {
   margin: 0 auto;
   font-stretch: ultra-expanded;
   margin: 10px;
+  cursor: pointer;
 }
 
 .cakeName {
@@ -61,4 +51,45 @@ body, html {
 
 .cakeThumbnail {
   height: 100px;
+}
+
+.backToHome {
+  background-color: #90c8ff;
+  width: 280px;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0.5em;
+  font-stretch: ultra-expanded;
+  font-size: 20px;
+}
+
+.backToHome:hover {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 25px;
+  border: 1px solid black;
+}
+
+.cakeInstructions {
+  text-align: left;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 1em;
+  margin: 20px 20px;
+  border-radius: 5px;
+}
+
+h3.heading {
+  text-align: center;
+}
+
+.cakeTitle {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.cuisine {
+  font-size: 18px;
 }
