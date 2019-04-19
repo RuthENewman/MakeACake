@@ -50,7 +50,12 @@ function searchForRecipe(dessertID) {
       <div class="fullCakeRecipe">
         <div class="cakeTitle"><p>${name}</p></div>
         <div class="cuisine"><p>${cuisine}</p></div>
-        <iframe width="560" height="315" src=${youtube_url} frameborder="0"
+        <iframe
+        class="youtubeDemonstration"
+        width="560"
+        height="315"
+        src=${youtube_url}
+        frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
         <div class="cakeInstructions">
