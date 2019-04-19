@@ -28,7 +28,6 @@ function getDesserts() {
     .then(desserts => {
       cakesDiv.innerHTML = '';
       state.desserts = desserts.meals;
-      console.log(state.desserts);
       state.desserts.forEach(dessert => addADessert(dessert))
     })
 }
@@ -37,7 +36,6 @@ function searchForRecipe(dessertID) {
   fetch(`${dessertbyIDBaseURL}${dessertID}`)
     .then(response => response.json())
     .then(dessert => {
-      console.log(dessert)
       recipe = dessert.meals[0].strInstructions;
       video = dessert.meals[0].strYoutube;
       video_code = video.split('=')[1];
@@ -78,7 +76,6 @@ function addADessert(dessert) {
       </div>`;
   const allCakeDivs = document.querySelectorAll('.cake');
   allCakeDivs.forEach(singleCakeDiv => singleCakeDiv.addEventListener('click', function() {
-    console.log(singleCakeDiv.dataset.id)
     searchForRecipe(singleCakeDiv.dataset.id)
 }));
 }
