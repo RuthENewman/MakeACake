@@ -1,0 +1,64 @@
+body, html {
+  background: #FBD3E9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #BB377D, #FBD3E9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #BB377D, #FBD3E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  text-align: center;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 400;
+}
+
+.heading {
+
+}
+
+.loadingMessage {
+  font-size: 40px;
+  text-align: center;
+}
+
+.cakeButton {
+  background-color: #90c8ff;
+  width: 280px;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0.5em;
+  font-stretch: ultra-expanded;
+  font-size: 20px;
+  display: none;
+}
+
+.cakes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cake {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  background-color: #90c8ff;
+  border: 2px solid darkblue;
+  padding: 0.5em;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  font-stretch: ultra-expanded;
+  margin: 10px;
+}
+
+.cakeName {
+  margin-right: 5px;
+}
+
+.cakeName {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.cakeThumbnail {
+  height: 100px;
+}
