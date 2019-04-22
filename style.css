@@ -73,13 +73,19 @@ h1.heading {
   border: 1px solid black;
 }
 
+.fullCakeRecipe {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
 .cakeInstructions, .ingredients {
   text-align: left;
   color: black;
   background-color: white;
   border: 1px solid black;
   padding: 1em;
-  margin: 20px 20px;
+  margin: 20px 100px;
   border-radius: 5px;
 }
 
@@ -106,7 +112,7 @@ h3.heading {
 
 @media only screen and (max-device-width: 480px) {
   .cakeInstructions {
-    width: 300px;
+    width: 80%;
     text-align: left;
     color: black;
     background-color: white;
@@ -124,6 +130,16 @@ h3.heading {
   h3.heading {
     text-align: center;
     margin-top: 0;
+  }
+
+  .cakeInstructions, .ingredients {
+    text-align: left;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding: 1em;
+    margin: 20px 20px;
+    border-radius: 5px;
   }
 
 }
