@@ -36,14 +36,16 @@ function searchForRecipe(dessertID) {
   fetch(`${dessertbyIDBaseURL}${dessertID}`)
     .then(response => response.json())
     .then(dessert => {
-      recipe = dessert.meals[0].strInstructions;
-      video = dessert.meals[0].strYoutube;
-      video_code = video.split('=')[1];
-      youtube_url = `https://www.youtube.com/embed/${video_code}`;
-      cuisine = dessert.meals[0].strArea;
-      name = dessert.meals[0].strMeal;
-      thumbnail = dessert.meals[0].strMealThumb;
+      let selectedDessert = dessert.meals[0]
+      let recipe = selectedDessert.strInstructions;
+      let video = selectedDessert.strYoutube;
+      let video_code = video.split('=')[1];
+      let youtube_url = `https://www.youtube.com/embed/${video_code}`;
+      let cuisine = selectedDessert.strArea;
+      let name = selectedDessert.strMeal;
+      let thumbnail = selectedDessert.strMealThumb;
       cakeButtonDiv.style.display = 'none';
+      console.log(dessert);
       cakesDiv.innerHTML = `
       <div class="fullCakeRecipe">
         <div class="cakeTitle"><p>${name}</p></div>
@@ -56,6 +58,24 @@ function searchForRecipe(dessertID) {
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
+        <div class="ingredients">
+          <h3 class="heading">Recipe ingredients</h3>
+          <p id="ingredient1">${selectedDessert.strMeasure1} ${selectedDessert.strIngredient1}</p>
+          <p id="ingredient2">${selectedDessert.strMeasure2} ${selectedDessert.strIngredient2}</p>
+          <p id="ingredient3">${selectedDessert.strMeasure3} ${selectedDessert.strIngredient3}</p>
+          <p id="ingredient4">${selectedDessert.strMeasure4} ${selectedDessert.strIngredient4}</p>
+          <p id="ingredient5">${selectedDessert.strMeasure5} ${selectedDessert.strIngredient5}</p>
+          <p id="ingredient6">${selectedDessert.strMeasure6} ${selectedDessert.strIngredient6}</p>
+          <p id="ingredient7">${selectedDessert.strMeasure7} ${selectedDessert.strIngredient7}</p>
+          <p id="ingredient8">${selectedDessert.strMeasure8} ${selectedDessert.strIngredient8}</p>
+          <p id="ingredient9">${selectedDessert.strMeasure9} ${selectedDessert.strIngredient9}</p>
+          <p id="ingredient10">${selectedDessert.strMeasure10} ${selectedDessert.strIngredient10}</p>
+          <p id="ingredient10">${selectedDessert.strMeasure11} ${selectedDessert.strIngredient11}</p>
+          <p id="ingredient12">${selectedDessert.strMeasure12} ${selectedDessert.strIngredient12}</p>
+          <p id="ingredient13">${selectedDessert.strMeasure13} ${selectedDessert.strIngredient13}</p>
+          <p id="ingredient14">${selectedDessert.strMeasure14} ${selectedDessert.strIngredient14}</p>
+          <p id="ingredient15">${selectedDessert.strMeasure15} ${selectedDessert.strIngredient15}</p>
+        </div>
         <div class="cakeInstructions">
           <h3 class="heading">Recipe instructions</h3>
           <p>${recipe}</p>
