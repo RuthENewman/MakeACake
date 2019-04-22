@@ -38,6 +38,7 @@ function searchForRecipe(dessertID) {
     .then(dessert => {
       let selectedDessert = dessert.meals[0]
       let recipe = selectedDessert.strInstructions;
+      let recipeInstructions = recipe.replace( /\.(\s+)/g, '<br /><br />');
       let video = selectedDessert.strYoutube;
       let video_code = video.split('=')[1];
       let youtube_url = `https://www.youtube.com/embed/${video_code}`;
@@ -78,7 +79,7 @@ function searchForRecipe(dessertID) {
         </div>
         <div class="cakeInstructions">
           <h3 class="heading">Recipe instructions</h3>
-          <p>${recipe}</p>
+          <p>${recipeInstructions}</p>
         </div>
         <div class="backToHome">Go back to all desserts</div>
       </div>`;
