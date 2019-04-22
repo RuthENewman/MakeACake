@@ -63,6 +63,7 @@ h1.heading {
   padding: 0.5em;
   font-stretch: ultra-expanded;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .backToHome:hover {
@@ -72,7 +73,7 @@ h1.heading {
   border: 1px solid black;
 }
 
-.cakeInstructions {
+.cakeInstructions, .ingredients {
   text-align: left;
   color: black;
   background-color: white;
@@ -80,6 +81,14 @@ h1.heading {
   padding: 1em;
   margin: 20px 20px;
   border-radius: 5px;
+}
+
+.ingredients {
+  text-align: center;
+}
+
+.ingredients > p {
+  margin: 0px 20px;
 }
 
 h3.heading {
@@ -110,6 +119,11 @@ h3.heading {
   .youtubeDemonstration {
     width: 336px;
     height: 189px;
+  }
+
+  h3.heading {
+    text-align: center;
+    margin-top: 0;
   }
 
 }
