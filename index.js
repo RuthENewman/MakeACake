@@ -1,6 +1,6 @@
 const proxyCORS = "https://cors-anywhere.herokuapp.com/";
 
-const dessertURL = `${proxyCORS}https://themealdb.com/api/json/v1/1/filter.php?c=Desert`;
+const dessertURL = `${proxyCORS}https://themealdb.com/api/json/v1/1/filter.php?c=Dessert`;
 const dessertbyIDBaseURL = `${proxyCORS}https://www.themealdb.com/api/json/v1/1/lookup.php?i=`;
 
 const cakesDiv = document.querySelector('.cakes')
